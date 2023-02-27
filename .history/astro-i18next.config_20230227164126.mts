@@ -3,8 +3,6 @@
 export default {
   defaultLocale: "en",
   locales: ["en", "fr"],
-  namespaces: ["common", "navigation", "home"],
-  defaultNamespace: "common",
   routes: {
     fr: {
       about: "a-propos",

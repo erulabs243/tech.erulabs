@@ -1,13 +1,11 @@
 ---
-import i18next, {t, setDefaultNamespace} from 'i18next';
+import i18next, {t} from 'i18next';
 import { Trans, HeadHrefLangs } from "astro-i18next/components";
 
 import Header from '../header/index.astro';
 
-setDefaultNamespace('common');
-
 const appName = import.meta.env.PUBLIC_APP_NAME;
-const appTagLine = t('site.tagline');
+const appTagLine = t('common:site.tagline');
 ---
 
 <!DOCTYPE html>
