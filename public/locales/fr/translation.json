@@ -1,0 +1,10 @@
+{
+  "site": {
+    "tagline": "Croitre en ligne"
+  },
+  "navigation": {
+    "home": "Accueil",
+    "services": "Services",
+    "contact": "Contact"
+  }
+}

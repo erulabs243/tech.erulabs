@@ -1,0 +1,10 @@
+{
+  "site": {
+    "tagline": "Go and grow online"
+  },
+  "navigation": {
+    "home": "Home",
+    "services": "Services",
+    "contact": "Contact"
+  }
+}
