@@ -2,8 +2,17 @@
 import { changeLanguage } from "i18next";
 import Landing from "../layouts/landing/index.astro";
 
+/* Home components */
+import Who from "../components/home/who.astro";
+import What from '../components/home/what.astro';
+import How from '../components/home/how.astro';
+import Why from '../components/home/why.astro';
+
 changeLanguage("en");
 ---
 <Landing>
-	<h1>Homepage</h1>
+		<Who />
+		<What />
+		<How />
+		<Why />
 </Landing>

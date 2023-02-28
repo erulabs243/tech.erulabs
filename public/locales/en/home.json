@@ -1,0 +1,56 @@
+{
+  "who": {
+    "subheader": {
+      "web-design": "Web design",
+      "mobile": "Mobile",
+      "ui": "UI",
+      "seo": "SEO"
+    },
+    "header": "You have bright <0>ideas</0> ! We bring them to <1>life</1> !",
+    "content": "We are a digital agency focused on Web and Mobile development, SEO and digital marketing"
+  },
+  "what": {
+    "subheader": "<0>What</0> we do",
+    "what-link": "Check this service",
+    "web-design": {
+      "header": "Web design",
+      "content": "We build performant websites that fit your brand..."
+    },
+    "mobile-app": {
+      "header": "Mobile app development",
+      "content": "Is an Android the best solution for your business ? Don't worry !"
+    },
+    "seo-digital": {
+      "header": "SEO & Digital Marketing",
+      "content": "Do you struggle bringing more traffic to your website and your social networks ?"
+    },
+    "web-hosting": {
+      "header": "Web hosting",
+      "content": "We help you find the best hosting provider and setup everything for you ! May it be a VPS or a Cloud hosting"
+    }
+  },
+  "how": {
+    "subheader": "<0>How</0> we do it",
+    "content": "How do we do to build these awesome projects ? Check out our dev stack !"
+  },
+  "why": {
+    "subheader": "<0>Why</0> work with us",
+    "why-link": "Read the story",
+    "support": {
+      "header": "Full support",
+      "content": "We provide full support for any kind of info or question you have. Feel free to get in touch with us either by WhatsApp or by mail"
+    },
+    "maintenance": {
+      "header": "Maintenance",
+      "content": "Our job does not end when we deploy your app. You get a full maintenance and updates for your solution"
+    },
+    "reporting": {
+      "header": "Reporting",
+      "content": "With great planning, come great achievement ! We offer you a monthly reporting of how your business is doing"
+    },
+    "more": {
+      "header": "One more reason",
+      "content": "We still have a good reason to work with us : we are always ready to hear you and give you the best"
+    }
+  }
+}

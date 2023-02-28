@@ -1,0 +1,30 @@
+---
+import {t, setDefaultNamespace} from 'i18next';
+import {Trans} from 'astro-i18next/components';
+
+setDefaultNamespace('home');
+---
+
+<section class="px-0 lg:px-12 py-12 lg:py-24">
+    <div class="container bg-orange-100 rounded-none lg:rounded-3xl px-5 lg:px-48 py-12 lg:py-24">
+            <div class="grid gap-5 grid-cols-3 lg:grid-cols-5 w-full lg:w-2/3 mx-auto">
+                <div class="col-span-3 self-center">
+                    <h2 class="uppercase text-2xl py-3 lg:text-3xl text-center lg:text-left">
+                        <Trans i18nKey="how.subheader">
+                            <span class="text-primary">How</span> we do it
+                        </Trans>
+                    </h2>
+                    <p class="text-center pb-3">{t('how.content')}</p>
+                </div>
+                <div class="bg-red-500 h-auto square rounded-3xl"></div>
+                <div class="bg-red-500 h-auto square rounded-3xl"></div>
+                <div class="bg-red-500 h-auto square rounded-3xl"></div>
+                <div class="bg-red-500 h-auto square rounded-3xl"></div>
+                <div class="bg-red-500 h-auto square rounded-3xl"></div>
+                <div class="bg-red-500 h-auto square rounded-3xl"></div>
+                <div class="bg-red-500 h-auto square rounded-3xl"></div>
+                <div class="bg-red-500 h-auto square rounded-3xl"></div>
+                <div class="bg-red-500 h-auto square rounded-3xl"></div>
+            </div>
+    </div>
+</section>

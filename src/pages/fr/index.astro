@@ -1,9 +1,11 @@
 ---
 import { changeLanguage } from "i18next";
 import Landing from "../../layouts/landing/index.astro";
+/* Home components */
+import Who from "../../components/home/who.astro";
 
 changeLanguage("fr");
 ---
 <Landing>
-	<h1>Homepage</h1>
+	<Who />
 </Landing>

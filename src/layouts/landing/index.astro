@@ -3,6 +3,7 @@ import i18next, {t, setDefaultNamespace} from 'i18next';
 import { Trans, HeadHrefLangs } from "astro-i18next/components";
 
 import Header from '../header/index.astro';
+import Footer from '../footer/index.astro';
 
 setDefaultNamespace('common');
 
@@ -13,14 +14,31 @@ const appTagLine = t('site.tagline');
 <!DOCTYPE html>
 <html lang={i18next.language}>
 <head>
+
+    <!-- Meta tags -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- End Meta tags -->
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+    <!-- End Google fonts -->
+
+    <link rel="stylesheet" href="/styles/custom.css">
+
     <HeadHrefLangs />
+    
     <title>{`${appName} - ${appTagLine}`}</title>
 </head>
-<body>
+<body class="bg-orange-100">
     <Header appName={appName} />
-    <slot />
+	
+    <main class="absolute top-0 w-full">
+        <slot />
+        <Footer />
+    </main>
 </body>
 </html>

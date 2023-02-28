@@ -2,6 +2,15 @@
   "header": {
     "home": "Home",
     "services": "Services",
-    "contact-us": "Contact us"
+    "contact-us": "Contact us",
+    "seo": "SEO",
+    "web-development": "Web Development",
+    "portfolio": "Portfolio",
+    "get-in-touch": "Get in touch",
+    "let-talk": "Let's talk"
+  },
+  "footer": {
+    "useful-links": "Useful links",
+    "head-office": "Head Office"
   }
 }
