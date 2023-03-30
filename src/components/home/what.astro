@@ -1,77 +1,116 @@
 ---
-import {t, setDefaultNamespace} from 'i18next';
-import {Trans} from 'astro-i18next/components';
+import { t, setDefaultNamespace } from "i18next";
+import { Trans } from "astro-i18next/components";
+import Svg from "@jasikpark/astro-svg-loader";
 
-setDefaultNamespace('home');
+import {
+  SmartphoneIcon,
+  CodeSSlashIcon,
+  FundsIcon,
+  ServerIcon,
+  ArrowRightUpIcon,
+} from "@remixicons/react/line";
+
+const whatTranslations = [
+  "web-design",
+  "mobile-app",
+  "seo-digital",
+  "api-building",
+];
+
+setDefaultNamespace("home");
 ---
 
 <section class="px-1 lg:px-12 py-12 lg:py-24">
-    <div class="container flex-none lg:flex">
-        <div class="w-full lg:w-1/2"></div>
-        <div class="w-full lg:w-1/2 p-5 lg:p-12">
-            <h2 class="uppercase text-2xl lg:text-3xl text-center lg:text-left">
-                <Trans i18nKey="what.subheader">
-                    <span class="text-primary">What</span> we do
-                </Trans>
-            </h2>
-            <div class="grid grid-cols-1 lg:grid-cols-2 my-12 gap-5">
-
-                <!-- WEB DESIGN -->
-                <div class="card bg-slate-100 hover:bg-orange-300">
-                    <a href="#">
-                        <div class="card-body">
-                            <h2 class="card-title uppercase px-3">{t('what.web-design.header')}</h2>
-                            <p class="text-gray-500 px-3">{t('what.web-design.content')}</p>
-                            <div class="card-actions mt-3">
-                                <a href="#" class="btn btn-ghost">{t('what.what-link')}</a>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <!-- END WEB DESIGN -->
-
-                <!-- MOBILE APP -->
-                <div class="card bg-slate-100 hover:bg-orange-300">
-                    <a href="#">
-                        <div class="card-body">
-                            <h2 class="card-title uppercase px-3">{t('what.mobile-app.header')}</h2>
-                            <p class="text-gray-500 px-3">{t('what.mobile-app.content')}</p>
-                            <div class="card-actions mt-3">
-                                <a href="#" class="btn btn-ghost">{t('what.what-link')}</a>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <!-- END MOBILE APP -->
-
-                <!-- SEO & DIGITAL MARKETING -->
-                <div class="card bg-slate-100 hover:bg-orange-300">
-                    <a href="#">
-                        <div class="card-body">
-                            <h2 class="card-title uppercase px-3">{t('what.seo-digital.header')}</h2>
-                            <p class="text-gray-500 px-3">{t('what.seo-digital.content')}</p>
-                            <div class="card-actions mt-3">
-                                <a href="#" class="btn btn-ghost">{t('what.what-link')}</a>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <!-- END SEO & DIGITAL MARKETING -->
-
-                <!-- WEB HOSTING -->
-                <div class="card bg-slate-100 hover:bg-orange-300">
-                    <a href="#">
-                        <div class="card-body">
-                            <h2 class="card-title uppercase px-3">{t('what.web-hosting.header')}</h2>
-                            <p class="text-gray-500 px-3">{t('what.web-hosting.content')}</p>
-                            <div class="card-actions mt-3">
-                                <a href="#" class="btn btn-ghost">{t('what.what-link')}</a>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <!-- END WEB HOSTING -->
-            </div>
-        </div>  
+  <div
+    class="container flex-none lg:flex lg:flex-row"
+    x-data="{showImage: 'web-design'}"
+  >
+    <div class="w-full lg:w-1/2 self-center">
+      <section x-show="showImage === 'web-design'">
+        <Svg src={import("../svgs/webdesign.svg?raw")} />
+      </section>
+      <section x-show="showImage === 'mobile-app'">
+        <Svg src={import("../svgs/mobile-product.svg?raw")} />
+      </section>
+      <section x-show="showImage === 'seo-digital'">
+        <Svg src={import("../svgs/seo.svg?raw")} />
+      </section>
+      <section x-show="showImage === 'api-building'">
+        <Svg src={import("../svgs/api.svg?raw")} />
+      </section>
     </div>
+
+    <div class="w-full lg:w-1/2 p-5 lg:p-12">
+      <h2 class="text-2xl lg:text-3xl text-center lg:text-left">
+        <Trans i18nKey="what.subheader">
+          <span
+            class="text-transparent bg-clip-text bg-[radial-gradient(ellipse_at_left,_var(--tw-gradient-stops))] from-orange-500 via-pink-500 to-orange-500 font-bold uppercase"
+            >What</span
+          > we do
+        </Trans>
+      </h2>
+      <div class="grid grid-cols-1 lg:grid-cols-2 my-12 gap-5" role="list">
+        {
+          whatTranslations.map((whatEl) => (
+            <div
+              class="card bg-slate-100 hover:bg-[conic-gradient(at_top_left,_var(--tw-gradient-stops))] hover:from-orange-500 hover:via-pink-500 hover:to-orange-500 group/item hover:cursor-pointer"
+              role="listitem"
+              x-on:click={`showImage='${whatEl}'`}
+            >
+              <section>
+                <div class="card-body">
+                  <div class="px-3">
+                    {
+                      {
+                        "web-design": (
+                          <div class="flex flex-row justify-between items-center">
+                            <CodeSSlashIcon className="w-8 h-8 fill-slate-600 group-hover/item:fill-slate-50" />
+                            <ArrowRightUpIcon className="w-6 h-6 fill-slate-600 invisible group-hover/item:fill-slate-50 group-hover/item:visible" />
+                          </div>
+                        ),
+                        "mobile-app": (
+                          <div class="flex flex-row justify-between items-center">
+                            <SmartphoneIcon className="w-8 h-8 fill-slate-600 group-hover/item:fill-slate-50" />
+                            <ArrowRightUpIcon className="w-6 h-6 fill-slate-600 invisible group-hover/item:fill-slate-50 group-hover/item:visible" />
+                          </div>
+                        ),
+                        "seo-digital": (
+                          <div class="flex flex-row justify-between items-center">
+                            <FundsIcon className="w-8 h-8 fill-slate-600 group-hover/item:fill-slate-50" />
+                            <ArrowRightUpIcon className="w-6 h-6 fill-slate-600 invisible group-hover/item:fill-slate-50 group-hover/item:visible" />
+                          </div>
+                        ),
+                        "api-building": (
+                          <div class="flex flex-row justify-between items-center">
+                            <ServerIcon className="w-8 h-8 fill-slate-600 group-hover/item:fill-slate-50" />
+                            <ArrowRightUpIcon className="w-6 h-6 fill-slate-600 invisible group-hover/item:fill-slate-50 group-hover/item:visible" />
+                          </div>
+                        ),
+                      }[whatEl]
+                    }
+                  </div>
+
+                  <h2 class="card-title font-normal uppercase px-3 group-hover/item:text-white">
+                    {t(`what.${whatEl}.header`)}
+                  </h2>
+                  <p class="text-slate-600 px-3 pt-4 group-hover/item:text-slate-50">
+                    {t(`what.${whatEl}.content`)}
+                  </p>
+                  <div class="card-actions mt-3 invisible group-hover/item:visible">
+                    <a
+                      href="#"
+                      class="btn btn-ghost group-hover/item:text-slate-50"
+                    >
+                      {t("what.what-link")}
+                    </a>
+                  </div>
+                </div>
+              </section>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
 </section>

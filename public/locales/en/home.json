@@ -24,9 +24,9 @@
       "header": "SEO & Digital Marketing",
       "content": "Do you struggle bringing more traffic to your website and your social networks ?"
     },
-    "web-hosting": {
-      "header": "Web hosting",
-      "content": "We help you find the best hosting provider and setup everything for you ! May it be a VPS or a Cloud hosting"
+    "api-building": {
+      "header": "API building",
+      "content": "We build awesome APIs that you can use as backend for your mobile app or your website"
     }
   },
   "how": {
@@ -52,5 +52,13 @@
       "header": "One more reason",
       "content": "We still have a good reason to work with us : we are always ready to hear you and give you the best"
     }
+  },
+  "tools": {
+    "programming": "Programming",
+    "cms": "CMS",
+    "framework": "Framework",
+    "software": "Software",
+    "plugin": "Plugin",
+    "database": "Database"
   }
 }

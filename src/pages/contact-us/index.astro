@@ -1,7 +1,125 @@
 ---
 import { changeLanguage } from "i18next";
+import Landing from "../../layouts/landing/index.astro";
+
+import {
+  PhoneIcon,
+  MailOpenIcon,
+  MapPin3Icon,
+  AtIcon,
+  WhatsappIcon,
+} from "@remixicons/react/line";
 
 changeLanguage("en");
 ---
 
-<h1>Contact</h1>
+<Landing>
+  <main class="p-24 w-full bg-stone-200">
+    <header>
+      <h1>Contact us</h1>
+      <p>We're always happy to hear from you.<br />Get in touch 👋</p>
+    </header>
+    <div class="flex flex-row my-12 bg-slate-50 rounded-3xl w-3/4 mx-auto">
+      <section class="w-2/5 bg-[#1db1ff] p-12 rounded-3xl">
+        <div>
+          <h3>Contact Information</h3>
+          <p>Everywhere you can find us. Even for a call !</p>
+        </div>
+        <div>
+          <div class="flex flex-row items-center">
+            <PhoneIcon className="w-8 h-8 fill-stone-700" />
+            <p>+243 (0) 851 858 485<br />+243 (0) 974 817 871</p>
+          </div>
+          <div class="flex flex-row items-center">
+            <MailOpenIcon className="w-8 h-8 fill-stone-700" />
+            <p><a href="mailto:hello@erulabs.tech">hello@erulabs.tech</a></p>
+          </div>
+          <div class="flex flex-row items-center">
+            <MapPin3Icon className="w-8 h-8 fill-stone-700" />
+            <>
+              112 Murhaluza, Kamisimbi<br />Walungu, South Kivu<br /> Democratic
+              Republic of Congo
+            </>
+          </div>
+        </div>
+      </section>
+
+      <section class="w-3/5 p-12">
+        <form>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="form-control">
+              <label for="firstname" class="label">
+                <span class="label-text">Firstname</span>
+              </label>
+              <input
+                type="text"
+                name="firstname"
+                id="firstname"
+                class="input input-md input-bordered w-full max-w-xs"
+                required
+              />
+            </div>
+            <div class="form-control">
+              <label for="lastname" class="label">
+                <span class="label-text">Last name</span>
+              </label>
+              <input
+                type="text"
+                name="lastname"
+                id="lastname"
+                class="input input-md input-bordered w-full max-w-xs"
+                required
+              />
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="form-control">
+              <label class="label">
+                <span class="label-text">Your Email</span>
+              </label>
+              <label class="input-group">
+                <span><AtIcon className="w-4 h-4" /></span>
+                <input
+                  type="text"
+                  placeholder="info@site.com"
+                  class="input input-bordered w-full"
+                  required
+                />
+              </label>
+            </div>
+
+            <div class="form-control">
+              <label for="phone" class="label">
+                <span class="label-text">Phone number</span>
+              </label>
+              <label for="phone" class="input-group">
+                <span><PhoneIcon className="w-4 h-4" /></span>
+                <input
+                  type="tel"
+                  name="phone"
+                  id="phone"
+                  class="input input-bordered w-full"
+                  required
+                />
+              </label>
+              <div class="form-control">
+                <label
+                  for="whatsapp"
+                  class="label cursor-pointer justify-start"
+                >
+                  <input
+                    type="checkbox"
+                    name="whatsapp"
+                    id="whatsapp"
+                    class="checkbox checkbox-sm"
+                  />
+                  <span class="label-text pl-4">Contact me using WhatsApp</span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </form>
+      </section>
+    </div>
+  </main>
+</Landing>

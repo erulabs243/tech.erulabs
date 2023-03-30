@@ -1,0 +1,17 @@
+---
+import { changeLanguage } from "i18next";
+import Landing from "../../../layouts/landing/index.astro";
+/* Blog components */
+import Header from "../../../components/blog/header.astro";
+import Sidebar from "../../../components/blog/sidebar.astro";
+
+changeLanguage("fr");
+---
+
+<Landing>
+    <main class="relative">
+        <Sidebar />
+        <Header />
+        <h1>Blog</h1>
+    </main>
+</Landing>

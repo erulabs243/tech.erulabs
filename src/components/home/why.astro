@@ -1,87 +1,180 @@
 ---
-import {t, setDefaultNamespace} from 'i18next';
-import {Trans} from 'astro-i18next/components';
+import { t, setDefaultNamespace } from "i18next";
+import { Trans } from "astro-i18next/components";
+import { ArrowRightCircleIcon, ArrowRightUpIcon } from "@remixicons/react/line";
 
-setDefaultNamespace('home');
+const whyElements: string[] = ["support", "maintenance", "reporting", "more"];
+
+setDefaultNamespace("home");
 ---
 
 <section class="px-1 lg:px-12 py-23 lg:py-24">
-    <div class="container flex-none lg:flex">
-        <div class="p-5 lg:p-12">
-            <h2 class="uppercase text-2xl lg:text-3xl text-center lg:text-left">
-                <Trans i18nKey="why.subheader">
-                    <span class="text-primary">Why</span> work with us
-                </Trans>
-            </h2>
-            <div class="grid grid-cols-1 lg:grid-cols-2 my-12 gap-12 lg:gap-24">
-
-                <div class="grid grid-cols-1 gap-1">
-
-                    <!-- SUPPORT -->
-                    <div class="card hover:bg-orange-300">
-                            <div class="card-body">
-                                <h2 class="card-title uppercase px-3">{t('why.support.header')}</h2>
-                                <p class="text-gray-500 px-3">{t('why.support.content')}</p>
-                            </div>
-                    </div>
-                    <!-- END SUPPORT -->
-
-                    <!-- MAINTENANCE -->
-                    <div class="card hover:bg-orange-300">
-                            <div class="card-body">
-                                <h2 class="card-title uppercase px-3">{t('why.maintenance.header')}</h2>
-                                <p class="text-gray-500 px-3">{t('why.maintenance.content')}</p>
-                            </div>
-                    </div>
-                    <!-- END MAINTENANCE -->
-
-                    <!-- REPORTING -->
-                    <div class="card hover:bg-orange-300">
-                            <div class="card-body">
-                                <h2 class="card-title uppercase px-3">{t('why.reporting.header')}</h2>
-                                <p class="text-gray-500 px-3">{t('why.reporting.content')}</p>
-                            </div>
-                    </div>
-                    <!-- END REPORTING -->
-
-                    <!-- MORE -->
-                    <div class="card hover:bg-orange-300">
-                            <div class="card-body">
-                                <h2 class="card-title uppercase px-3">{t('why.more.header')}</h2>
-                                <p class="text-gray-500 px-3">{t('why.more.content')}</p>
-                            </div>
-                    </div>
-                    <!-- END MORE -->
+  <div class="container flex-none lg:flex">
+    <div class="p-5 lg:p-12">
+      <h2 class="uppercase text-2xl lg:text-3xl text-center lg:text-left">
+        <Trans i18nKey="why.subheader">
+          <span class="text-primary">Why</span> work with us
+        </Trans>
+      </h2>
+      <!-- <div class="grid grid-cols-1 lg:grid-cols-2 my-12 gap-12 lg:gap-24"> -->
+      <div
+        class="flex flex-col lg:flex-row my-12 gap-12 lg:gap-24 items-center"
+        x-data="{openTab: 'support'}"
+      >
+        <div class="flex flex-col w-full lg:w-2/6" role="list">
+          {
+            whyElements.map((why, idx) => (
+              <div
+                tabindex={idx}
+                class="collapse  group/why border border-base-100 border-b-2 rounded-box"
+                role="listitem"
+                x-on:click={"openTab ='" + why + "'"}
+              >
+                <div class="flex flex-row items-center group-focus/why:bg-slate-600 px-8">
+                  <h2 class="collapse-title  uppercase group-focus/why:text-lg group-focus/why:text-slate-50 border-b-2 group-focus/why:border-b-0  group-focus/why:pt-8">
+                    {t(`why.${why}.header`)}
+                  </h2>
+                  <ArrowRightUpIcon className="w-6 h-6  fill-slate-600 group-focus/why:fill-slate-50 " />
                 </div>
+                <p class="collapse-content text-gray-500 px-8 group-focus/why:bg-slate-600 group-focus/why:text-slate-50 group-focus/why:pb-8">
+                  {t(`why.${why}.content`)}
+                </p>
+              </div>
+            ))
+          }
+        </div>
 
-                <!-- TODO create a testimonial carousel -->
-                <div class="grid grid-cols-1">
-                    <div class="card rounded-3xl bg-slate-200">
-                        <div class="card-body">
-                            <blockquote class="w-full lg:w-3/4 mx-auto p-3 lg:p-6 text-lg lg:text-xl leading-12">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                                Sapiente molestias nisi expedita inventore dolores blanditiis! 
-                                Blanditiis repellat impedit, nisi, 
-                                fugit fuga assumenda iste illum cupiditate excepturi officiis nihil, 
-                                reprehenderit qui. 
-                                fugit fuga assumenda iste illum cupiditate excepturi officiis nihil, 
-                                reprehenderit qui.
-                            </blockquote>
-                            <div class="flex justify-center items-center my-5">
-                                <div class="w-16 h-16 bg-slate-700 rounded-full"></div>
-                                <div class="px-5">
-                                    <h3 class="font-semibold">Antoine-Glorieux Lukama</h3>
-                                    <p class="text-lg">CEO & Founder, EruLabs</p>
-                                    <a href="https://erulabs.tech" class="link-hover">www.erulabs.tech</a>
-                                </div>
-                            </div>
-                            <div class="card-actions justify-center">
-                                <a href="#" class="btn btn-primary">{t('why.why-link')}</a>
-                            </div>
-                        </div>
-                    </div>
+        <!-- TODO create a testimonial carousel -->
+        <section class="grid grid-cols-1 w-full lg:w-2/3">
+          <article
+            class="card rounded-3xl bg-slate-200"
+            x-show="openTab === 'support'"
+            x-cloak
+          >
+            <div class="card-body">
+              <blockquote
+                class="w-full mx-auto p-3 lg:p-8 text-lg lg:text-lg leading-12 text-center"
+              >
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Sapiente molestias nisi expedita inventore dolores blanditiis!
+                Blanditiis repellat impedit, nisi, fugit fuga assumenda iste
+                illum cupiditate excepturi officiis nihil, reprehenderit qui.
+                fugit fuga assumenda iste illum cupiditate excepturi officiis
+                nihil, reprehenderit qui.
+              </blockquote>
+              <div class="flex justify-center items-center my-5">
+                <div class="w-16 h-16 bg-slate-700 rounded-full"></div>
+                <div class="px-5">
+                  <h3 class="font-semibold">Antoine-Glorieux Lukama</h3>
+                  <p class="text-lg">CEO & Founder, EruLabs</p>
+                  <a href="https://erulabs.tech" class="link-hover"
+                    >www.erulabs.tech</a
+                  >
                 </div>
+              </div>
+              <div class="card-actions justify-center">
+                <a href="#" class="btn btn-primary">{t("why.why-link")}</a>
+              </div>
             </div>
-        </div>  
+          </article>
+
+          <article
+            class="card rounded-3xl bg-slate-200"
+            x-show="openTab === 'maintenance'"
+            x-cloak
+          >
+            <div class="card-body">
+              <blockquote
+                class="w-full mx-auto p-3 lg:p-8 text-lg lg:text-lg leading-12 text-center"
+              >
+                Maintenance ! Lorem ipsum dolor sit amet consectetur adipisicing
+                elit. Sapiente molestias nisi expedita inventore dolores
+                blanditiis! Blanditiis repellat impedit, nisi, fugit fuga
+                assumenda iste illum cupiditate excepturi officiis nihil,
+                reprehenderit qui. fugit fuga assumenda iste illum cupiditate
+                excepturi officiis nihil, reprehenderit qui.
+              </blockquote>
+              <div class="flex justify-center items-center my-5">
+                <div class="w-16 h-16 bg-slate-700 rounded-full"></div>
+                <div class="px-5">
+                  <h3 class="font-semibold">Antoine-Glorieux Lukama</h3>
+                  <p class="text-lg">CEO & Founder, EruLabs</p>
+                  <a href="https://erulabs.tech" class="link-hover"
+                    >www.erulabs.tech</a
+                  >
+                </div>
+              </div>
+              <div class="card-actions justify-center">
+                <a href="#" class="btn btn-primary">{t("why.why-link")}</a>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="card rounded-3xl bg-slate-200"
+            x-show="openTab === 'reporting'"
+            x-cloak
+          >
+            <div class="card-body">
+              <blockquote
+                class="w-full mx-auto p-3 lg:p-8 text-lg lg:text-lg leading-12 text-center"
+              >
+                Reporting ! Lorem ipsum dolor sit amet consectetur adipisicing
+                elit. Sapiente molestias nisi expedita inventore dolores
+                blanditiis! Blanditiis repellat impedit, nisi, fugit fuga
+                assumenda iste illum cupiditate excepturi officiis nihil,
+                reprehenderit qui. fugit fuga assumenda iste illum cupiditate
+                excepturi officiis nihil, reprehenderit qui.
+              </blockquote>
+              <div class="flex justify-center items-center my-5">
+                <div class="w-16 h-16 bg-slate-700 rounded-full"></div>
+                <div class="px-5">
+                  <h3 class="font-semibold">Antoine-Glorieux Lukama</h3>
+                  <p class="text-lg">CEO & Founder, EruLabs</p>
+                  <a href="https://erulabs.tech" class="link-hover"
+                    >www.erulabs.tech</a
+                  >
+                </div>
+              </div>
+              <div class="card-actions justify-center">
+                <a href="#" class="btn btn-primary">{t("why.why-link")}</a>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="card rounded-3xl bg-slate-200"
+            x-show="openTab === 'more'"
+            x-cloak
+          >
+            <div class="card-body">
+              <blockquote
+                class="w-full mx-auto p-3 lg:p-8 text-lg lg:text-lg leading-12 text-center"
+              >
+                More ! Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Sapiente molestias nisi expedita inventore dolores blanditiis!
+                Blanditiis repellat impedit, nisi, fugit fuga assumenda iste
+                illum cupiditate excepturi officiis nihil, reprehenderit qui.
+                fugit fuga assumenda iste illum cupiditate excepturi officiis
+                nihil, reprehenderit qui.
+              </blockquote>
+              <div class="flex justify-center items-center my-5">
+                <div class="w-16 h-16 bg-slate-700 rounded-full"></div>
+                <div class="px-5">
+                  <h3 class="font-semibold">Antoine-Glorieux Lukama</h3>
+                  <p class="text-lg">CEO & Founder, EruLabs</p>
+                  <a href="https://erulabs.tech" class="link-hover"
+                    >www.erulabs.tech</a
+                  >
+                </div>
+              </div>
+              <div class="card-actions justify-center">
+                <a href="#" class="btn btn-primary">{t("why.why-link")}</a>
+              </div>
+            </div>
+          </article>
+        </section>
+      </div>
     </div>
+  </div>
 </section>

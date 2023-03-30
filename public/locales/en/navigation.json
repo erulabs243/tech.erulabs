@@ -6,11 +6,13 @@
     "seo": "SEO",
     "web-development": "Web Development",
     "portfolio": "Portfolio",
+    "blog": "Blog",
     "get-in-touch": "Get in touch",
     "let-talk": "Let's talk"
   },
   "footer": {
     "useful-links": "Useful links",
-    "head-office": "Head Office"
+    "head-office": "Head Office",
+    "services": "Services" 
   }
 }

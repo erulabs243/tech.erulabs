@@ -1,0 +1,74 @@
+---
+import { t, setDefaultNamespace } from "i18next";
+import { Trans } from "astro-i18next/components";
+
+const languageItems = [
+  ["devicon-apache-plain", "Apache"],
+  ["devicon-php-plain", "PHP"],
+  ["devicon-laravel-plain", "Laravel"],
+  ["devicon-typescript-plain", "Typescript"],
+  ["devicon-react-original", "React"],
+  ["devicon-css3-plain", "CSS3"],
+  ["devicon-git-plain", "Git"],
+  ["devicon-github-original", "Github"],
+  ["devicon-graphql-plain", "GraphQL"],
+  ["devicon-html5-plain", "HTML5"],
+  ["devicon-illustrator-plain", "Adobe Illustrator"],
+  ["devicon-jamstack-plain", "Jamstack"],
+  ["devicon-javascript-plain", "Javascript"],
+  ["devicon-mongodb-plain", "MongoDB"],
+  ["devicon-mysql-plain", "MySQL"],
+  ["devicon-nginx-original", "NGiNX"],
+  ["devicon-nodejs-plain", "NodeJS"],
+  ["devicon-npm-original-wordmark", "NPM"],
+  ["devicon-slack-plain", "Slack"],
+  ["devicon-ssh-original", "SSH"],
+  ["devicon-tailwindcss-plain", "TailwindCSS"],
+  ["devicon-trello-plain", "Asana"],
+  ["devicon-ubuntu-plain", "Ubuntu"],
+  ["devicon-vscode-plain", "VSCode"],
+  ["devicon-woocommerce-plain", "woocommerce"],
+  ["devicon-wordpress-plain", "WordPress"],
+  ["devicon-yarn-plain", "Yarn"],
+];
+
+setDefaultNamespace("home");
+---
+
+<section class="px-0 lg:px-12 py-12 lg:py-24">
+  <div
+    class="container bg-[conic-gradient(at_bottom_right,_var(--tw-gradient-stops))] from-stone-900 via-neutral-600 to-stone-500 rounded-none lg:rounded-3xl px-5 lg:px-48 py-12 lg:py-24"
+  >
+    <div
+      class="grid gap-5 grid-cols-3 lg:grid-cols-5 w-full lg:w-2/3 mx-auto items-end"
+    >
+      <div class="col-span-3 self-center">
+        <h2
+          class="text-2xl py-3 lg:text-3xl text-center lg:text-left text-slate-50"
+        >
+          <Trans i18nKey="how.subheader">
+            <span
+              class="text-transparent bg-clip-text bg-[radial-gradient(ellipse_at_left,_var(--tw-gradient-stops))] from-orange-500 via-pink-500 to-orange-500 font-bold uppercase"
+              >How</span
+            > we do it
+          </Trans>
+        </h2>
+        <p class="text-left text-lg pb-3 pr-10 text-slate-50">
+          {t("how.content")}
+        </p>
+      </div>
+      {
+        languageItems.map((language) => (
+          <div
+            class="h-auto square rounded-3xl group/language hover:cursor-pointer"
+            role="listitem"
+          >
+            <div class="tooltip" data-tip={language[1]}>
+              <i class={`${language[0]} text-8xl text-slate-50`} />
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
