@@ -13,8 +13,8 @@ import {
 
 const whatTranslations = [
   "web-design",
-  "mobile-app",
   "seo-digital",
+  "mobile-app",
   "api-building",
 ];
 
@@ -26,7 +26,7 @@ setDefaultNamespace("home");
     class="container flex-none lg:flex lg:flex-row"
     x-data="{showImage: 'web-design'}"
   >
-    <div class="w-full lg:w-1/2 self-center">
+    <div class="w-full lg:w-1/2 self-center hidden md:block">
       <section x-show="showImage === 'web-design'">
         <Svg src={import("../svgs/webdesign.svg?raw")} />
       </section>
@@ -50,6 +50,8 @@ setDefaultNamespace("home");
           > we do
         </Trans>
       </h2>
+
+      
       <div class="grid grid-cols-1 lg:grid-cols-2 my-12 gap-5" role="list">
         {
           whatTranslations.map((whatEl) => (
@@ -58,6 +60,22 @@ setDefaultNamespace("home");
               role="listitem"
               x-on:click={`showImage='${whatEl}'`}
             >
+
+            <!-- For mobile -->
+      <div class="w-full self-center block md:hidden my-8">
+      {
+        {
+          'web-design': (<Svg src={import("../svgs/webdesign.svg?raw")} />),
+          'mobile-app': (<Svg src={import("../svgs/mobile-product.svg?raw")} />),
+          'seo-digital': (<Svg src={import("../svgs/seo.svg?raw")} />),
+          'api-building': (<Svg src={import("../svgs/api.svg?raw")} />)
+        }[whatEl]
+      }
+
+    </div>
+
+      <!-- End for mobile -->
+
               <section>
                 <div class="card-body">
                   <div class="px-3">

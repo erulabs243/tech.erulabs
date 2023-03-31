@@ -1,7 +1,24 @@
 @font-face {
-    font-family: 'Quicksand';
-    src: url('/fonts/Quicksand/static/Quicksand-Regular.ttf') format('ttf');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
+  font-family: "ElyzabethPro-Regular";
+  src: url("../fonts/elyzabeth-pro/ElyzabethPro-Regular.eot") format("eot"),
+    url("../fonts/elyzabeth-pro/ElyzabethPro-Regular.ttf") format("ttf"),
+    url("../fonts/elyzabeth-pro/ElyzabethPro-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: "ElyzabethPro-SemiBold";
+  src: url("../fonts/elyzabeth-pro/ElyzabethPro-SemiBold.eot") format("eot"),
+    url("../fonts/elyzabeth-pro/ElyzabethPro-SemiBold.ttf") format("ttf"),
+    url("../fonts/elyzabeth-pro/ElyzabethPro-SemiBold.woff") format("woff");
+}
+@font-face {
+  font-family: "ElyzabethPro-Bold";
+  src: url("../fonts/elyzabeth-pro/ElyzabethPro-Bold.eot") format("eot"),
+    url("../fonts/elyzabeth-pro/ElyzabethPro-Bold.ttf") format("ttf"),
+    url("../fonts/elyzabeth-pro/ElyzabethPro-Bold.woff") format("woff");
+}
+@font-face {
+  font-family: "ElyzabethPro-Thin";
+  src: url("../fonts/elyzabeth-pro/ElyzabethPro-Thin.eot") format("eot"),
+    url("../fonts/elyzabeth-pro/ElyzabethPro-Thin.ttf") format("ttf"),
+    url("../fonts/elyzabeth-pro/ElyzabethPro-Thin.woff") format("woff");
 }

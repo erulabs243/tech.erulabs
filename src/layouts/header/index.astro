@@ -1,6 +1,5 @@
 ---
 import { language, t, setDefaultNamespace } from "i18next";
-
 setDefaultNamespace("navigation");
 
 const { appName } = Astro.props;
@@ -8,7 +7,7 @@ const { appName } = Astro.props;
 
 <!-- TODO set background on scroll -->
 <div class="navbar bg-transparent sticky top-0 lg:px-20 z-50">
-  <div class="flex-1">
+  <div class="flex-1 items-center">
     <div class="block sm:hidden">
       <div class="dropdown">
         <label tabindex="0" class="btn btn-ghost btn-circle">
@@ -35,12 +34,14 @@ const { appName } = Astro.props;
         </ul>
       </div>
     </div>
-    <a class="btn btn-ghost normal-case flex-1 sm:flex-none text-xl"
-      >{appName}</a
+    <a
+      class="btn btn-ghost flex-1 pt-1 sm:flex-none text-2xl uppercase font-ElyzabethPro-Bold align-middle"
+    >
+      {appName}</a
     >
     <div class="sm:hidden">
       <a href="/contact-us" class="btn btn-primary self-end sm:hidden"
-        >{t("header.contact-us")}</a
+        >{t("header.let-talk")}</a
       >
     </div>
   </div>
