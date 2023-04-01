@@ -1,5 +1,4 @@
 import { defineConfig } from "astro/config";
-import netlify from '@astrojs/netlify/functions';
 
 // https://astro.build/config
 import react from "@astrojs/react";
@@ -14,6 +13,5 @@ import alpinejs from "@astrojs/alpinejs";
 // https://astro.build/config
 export default defineConfig({
 	integrations: [react(), tailwind(), astroI18next(), alpinejs()],
-	output: "server",
-adapter: netlify(),
+	//output: "server",
 });
