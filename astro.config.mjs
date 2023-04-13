@@ -13,5 +13,5 @@ import alpinejs from "@astrojs/alpinejs";
 // https://astro.build/config
 export default defineConfig({
 	integrations: [react(), tailwind(), astroI18next(), alpinejs()],
-	output: "server",
+	//output: "server",
 });
